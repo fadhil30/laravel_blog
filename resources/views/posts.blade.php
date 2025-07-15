@@ -3,7 +3,7 @@
 @extends('layouts.main')
 
 @section('container')
-  <h1 class="my-4 pb-4">Posts Page</h1>
+  <h1 class="my-4 pb-4">{{ $title }}</h1>
   @foreach ($posts as $post)
     <article class="mb-5 border-bottom pb-4">
       <h2>
