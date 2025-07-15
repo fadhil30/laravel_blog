@@ -4,7 +4,7 @@
   <div class="container">
     <div class="row justify-content-center mb-5">
       <div class="col-md-8">
-        <h1 class="mb-3">{{ $post->$title }}</h1>
+        <h1 class="mb-3">{{ $post->title }}</h1>
         <p>By: <a class="text-decoration-none" href="/authors/{{ $post->author->username }}">{{ $post->author->name }}</a>,
           <a class="text-decoration-none" href="/categories/{{ $post->category->slug }}">{{ $post->category->name }}</a>
         </p>
