@@ -37,7 +37,7 @@
               <a class="text-white text-decoration-none"
                 href="/categories/{{ $post->category->slug }}">{{ $post->category->name }}</a>
             </div>
-            <img src="https://picsum.photos/seed/{{ $post->category->name }}/500/500" class="card-img-top"
+            <img src="https://picsum.photos/seed/{{ $post->category->name }}/500/400" class="card-img-top"
               alt="{{ $post->category->name }}">
             <div class="card-body">
               <h5 class="card-title">{{ $post->title }}</h5>
