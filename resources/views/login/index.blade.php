@@ -28,7 +28,7 @@
                               is-invalid
                             @enderror>
                         <label for="email">Email address</label>
-                        @error()
+                        @error('email')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
                     </div>
