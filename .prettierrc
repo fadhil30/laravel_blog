@@ -1,0 +1,15 @@
+{
+  "singleQuote": true,
+  "semi": true,
+  "tabWidth": 2,
+  "trailingComma": "es5",
+  "plugins": ["prettier-plugin-blade"],
+  "overrides": [
+    {
+      "files": "*.blade.php",
+      "options": {
+        "parser": "blade"
+      }
+    }
+  ]
+}

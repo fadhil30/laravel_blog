@@ -13,5 +13,5 @@
   <h1>About Page</h1>
   <h3>{{ $name }}</h3>
   <p>{{ $email }}</p>
-  <img src="image/{{ $image }}" alt="{{ $name }}" class="profile-img">
+  <img src="image/{{ $image }}" alt="{{ $name }}" class="profile-img" />
 @endsection

@@ -5,11 +5,27 @@
     <div class="row justify-content-center mb-5">
       <div class="col-md-8">
         <h1 class="mb-3">{{ $post->title }}</h1>
-        <p>By: <a class="text-decoration-none" href="/posts?author={{ $post->author->username }}">{{ $post->author->name }}</a>,
-          <a class="text-decoration-none" href="/posts?category={{ $post->category->slug }}">{{ $post->category->name }}</a>
+        <p>
+          By:
+          <a
+            class="text-decoration-none"
+            href="/posts?author={{ $post->author->username }}"
+          >
+            {{ $post->author->name }}
+          </a>
+          ,
+          <a
+            class="text-decoration-none"
+            href="/posts?category={{ $post->category->slug }}"
+          >
+            {{ $post->category->name }}
+          </a>
         </p>
-        <img src="https://picsum.photos/seed/{{ $post->category->name }}/1200/400" alt="{{ $post->category->name }}"
-          class="image-fluid">
+        <img
+          src="https://picsum.photos/seed/{{ $post->category->name }}/1200/400"
+          alt="{{ $post->category->name }}"
+          class="image-fluid"
+        />
         <article class="my-3 fs-5">
           {!! $post->body !!}
         </article>

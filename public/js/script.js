@@ -1,1 +1,1 @@
-alert('Welcome to Home Page')
+alert('Welcome to Home Page');
