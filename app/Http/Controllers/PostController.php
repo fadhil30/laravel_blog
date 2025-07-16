@@ -9,7 +9,7 @@ class PostController extends Controller
 {
     public function index()
     {
-
+        // dd(request('search'));
         $posts = Post::latest();
 
         if (request('search')) {
