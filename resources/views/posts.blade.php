@@ -22,6 +22,10 @@
         </div>
     </div>
 
+    @if ($search_query)
+        <h4 class="mb-3">Search result for: <strong>{{ $search_query }}</strong></h4>
+    @endif
+
     @if ($posts->count())
         <div class="card mb-3">
             <img src="https://picsum.photos/seed/{{ $posts[0]->category->name }}/1200/400" class="card-img-top"
@@ -73,4 +77,9 @@
     @else
         <p class="text-center fs-4">No Post Found.</p>
     @endif
+
+    <div class="d-flex justify-content-end">
+        {{ $posts->links() }}
+    </div>
+
 @endsection
