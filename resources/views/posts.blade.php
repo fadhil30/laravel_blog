@@ -8,6 +8,12 @@
     <div class="row justify-content-center mb-3">
         <div class="col-md-6">
             <form action="/posts">
+                @if (request('category'))
+                <input type="hidden" name="category" value="{{ request('category') }}">
+                @endif
+                @if (request('author'))
+                <input type="hidden" name="author" value="{{ request('author') }}">
+                @endif
                 <div class="input-group mb-3">
                     <input type="text" name="search" class="form-control" placeholder="Search..." aria-label="search">
                     <button class="btn btn-primary" type="submit">Search</button>
@@ -25,9 +31,9 @@
                         href="/posts/{{ $posts[0]->slug }}">{{ $posts[0]->title }}</a></h5>
                 <small class="text-muted">
                     <p>By: <a class="text-decoration-none"
-                            href="/authors/{{ $posts[0]->author->username }}">{{ $posts[0]->author->name }}</a>
+                            href="/posts?=author={{ $posts[0]->author->username }}">{{ $posts[0]->author->name }}</a>
                         in <a class="text-decoration-none"
-                            href="/categories/{{ $posts[0]->category->slug }}">{{ $posts[0]->category->name }}</a>
+                            href="/posts?category={{ $posts[0]->category->slug }}">{{ $posts[0]->category->name }}</a>
                         {{ $posts[0]->created_at->diffForHumans() }}
                     </p>
                     <p class="card-text">{{ $posts[0]->excerpt }}</p>
@@ -38,12 +44,12 @@
 
         <div class="container">
             <div class="row">
-                @foreach ($posts as $post)
+                @foreach ($posts->skip(1) as $post)
                     <div class="col-md-4 mb-3">
                         <div class="card">
                             <div class="position-absolute p-2 text-white" style="background-color: rgba(0, 0, 0, 0.7)">
                                 <a class="text-white text-decoration-none"
-                                    href="/categories/{{ $post->category->slug }}">{{ $post->category->name }}</a>
+                                    href="/posts?category={{ $post->category->slug }}">{{ $post->category->name }}</a>
                             </div>
                             <img src="https://picsum.photos/seed/{{ $post->category->name }}/500/400" class="card-img-top"
                                 alt="{{ $post->category->name }}">
@@ -51,7 +57,7 @@
                                 <h5 class="card-title">{{ $post->title }}</h5>
                                 <small class="text-muted">
                                     <p>By: <a class="text-decoration-none"
-                                            href="/authors/{{ $post->author->username }}">{{ $post->author->name }}</a>
+                                            href="/posts?author={{ $post->author->username }}">{{ $post->author->name }}</a>
                                         {{ $post->created_at->diffForHumans() }}
                                     </p>
                                 </small>
