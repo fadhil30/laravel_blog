@@ -2,9 +2,9 @@
 
 @section('container')
   <div class="container">
-    <div class="row justify-content-center mb-5">
-      <div class="col-md-8">
-        <h1 class="mb-3">{{ $post->title }}</h1>
+    <div class="row mb-5">
+      <div class="col-lg-8">
+        <h1 class="my-5">{{ $post->title }}</h1>
         <p>
           By:
           <a

@@ -25,6 +25,7 @@
 .sidebar .nav-link {
   font-size: 0.875rem;
   font-weight: 500;
+  color: black;
 }
 
 .sidebar .nav-link.active {

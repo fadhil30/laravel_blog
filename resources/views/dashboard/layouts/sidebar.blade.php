@@ -14,7 +14,8 @@
       <ul class="nav flex-column">
         <li class="nav-item">
           <a
-            class="nav-link d-flex align-items-center gap-2 {{ Request::is('dashboard') ? 'active' : '' }}"
+            {{-- Use Route::is() for a precise match on the named route --}}
+            class="nav-link d-flex align-items-center gap-2 {{ Route::is('dashboard') ? 'active' : '' }}"
             aria-current="page"
             href="/dashboard"
           >
@@ -24,7 +25,8 @@
         </li>
         <li class="nav-item">
           <a
-            class="nav-link d-flex align-items-center gap-2 {{ Request::is('dashboard/posts') ? 'active' : '' }}"
+            {{-- Use a wildcard '*' to match all URLs starting with 'dashboard/posts' --}}
+            class="nav-link d-flex align-items-center gap-2 {{ Request::is('dashboard/posts*') ? 'active' : '' }}"
             href="/dashboard/posts"
           >
             <i class="bi bi-file-earmark-richtext-fill"></i>
