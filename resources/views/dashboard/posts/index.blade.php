@@ -8,6 +8,10 @@
   </div>
 
   <div class="table-responsive col-lg-8">
+    <a class="btn btn-success my-2" href="/dashboard/posts/create">
+      <i class="bi bi-plus"></i>
+      Create new post
+    </a>
     <table class="table table-striped table-sm">
       <thead>
         <tr>
