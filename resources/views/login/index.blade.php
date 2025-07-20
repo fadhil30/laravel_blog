@@ -25,7 +25,7 @@
                         <input type="email" name="email" class="form-control" id="email"
                             placeholder="name@example.com" autofocus required value="{{ old('email') }}"
                             @error('email')
-                              is-invalid
+                            is-invalid
                             @enderror>
                         <label for="email">Email address</label>
                         @error('email')
