@@ -21,11 +21,23 @@
             {{ $post->category->name }}
           </a>
         </p>
-        <img
-          src="https://picsum.photos/seed/{{ $post->category->name }}/1200/400"
-          alt="{{ $post->category->name }}"
-          class="image-fluid"
-        />
+        @if ($post->image)
+        <div style="max-height: 350px; overflow: hidden">
+          <img
+            src="{{ asset('storage/' . $post->image) }}"
+            alt="{{ $post->category->name }}"
+            class="img-fluid img-cover"
+          />
+        </div>
+      @else
+        <div style="max-height: 350px; overflow: hidden">
+          <img
+            src="https://picsum.photos/seed/{{ $post->category->name }}/1200/400"
+            alt="{{ $post->category->name }}"
+            class="img-fluid img-cover"
+          />
+        </div>
+      @endif
         <article class="my-3 fs-5">
           {!! $post->body !!}
         </article>
