@@ -33,12 +33,6 @@
             <td>{{ $category->name }}</td>
             <td>
               <a
-                class="badge bg-info"
-                href="/dashboard/categories/{{ $category->slug }}"
-              >
-                <i class="bi bi-eye"></i>
-              </a>
-              <a
                 class="badge bg-warning"
                 href="/dashboard/categories/{{ $category->slug }}/edit"
               >
