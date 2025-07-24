@@ -122,6 +122,10 @@ class AdminCategoryController extends Controller
      */
     public function destroy(category $category)
     {
+        if($category->image) {
+            Storage::delete($category->image);
+        }
+
         Category::destroy($category->id);
         return redirect('/dashboard/categories')->with('success', 'Category has been deleted');
     }

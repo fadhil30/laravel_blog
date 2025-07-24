@@ -51,6 +51,12 @@
             class="img-fluid img-cover"
           />
         </div>
+      @elseif ($posts[0]->category->image)
+        <img
+          src="{{ asset('storage/' . $posts[0]->category->image) }}"
+          alt="{{ $posts[0]->category->name }}"
+          class="img-fluid img-cover"
+        />
       @else
         <div style="max-height: 350px; overflow: hidden">
           <img
@@ -119,6 +125,12 @@
               @if ($post->image)
                 <img
                   src="{{ asset('storage/' . $post->image) }}"
+                  alt="{{ $post->category->name }}"
+                  class="img-fluid img-cover"
+                />
+              @elseif ($post->category->image)
+                <img
+                  src="{{ asset('storage/' . $post->category->image) }}"
                   alt="{{ $post->category->name }}"
                   class="img-fluid img-cover"
                 />
